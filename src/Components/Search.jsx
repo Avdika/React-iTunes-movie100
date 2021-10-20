@@ -15,15 +15,16 @@ function Search() {
   const handleResult = result => {
     setMovies(result);
     setEmptySearch(result.length === 0);
+    console.log('___result', result);
   };
 
-  const searchMovies = (keyword) => {
+  const searchMovies = () => {
     setMovies([]);
 
     trackPromise(
       axios
-        .get(`https://itunes.apple.com/us/rss/topmovies/limit=100/json${keyword}`)
-        .then(result => handleResult(result.data.items))
+        .get(`https://itunes.apple.com/us/rss/topmovies/limit=100/json`)
+        .then(result => handleResult(result.data.feed.entry))
         .catch((error) => {
           console.log('we have received an error: ', error);
         }));

@@ -10,7 +10,9 @@ function Movie(props) {
       </a>
       <RepositoryBody>
         <Title>{props.title}</Title>
-        <Description>{props.description}</Description>
+        {/* <Description>{props.description}</Description> */}
+        <Title>Artist</Title><Description>{props.artist}</Description>
+        <Title>Releasedate</Title><Description>{props.releasedate}</Description>
       </RepositoryBody>
     </Container>
   )
