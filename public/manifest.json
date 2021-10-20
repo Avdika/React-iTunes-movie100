@@ -1,0 +1,11 @@
+{
+  "author": "Vadym Salan",
+  "name": "React Github Repository Search App",
+  "short_name": "Git repository search",
+
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "version": "0.8"
+}
