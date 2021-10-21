@@ -12,7 +12,7 @@ function Movies(props) {
           artist={item["im:artist"].label}
           description={item.summary.label}
           genre={item.category.attributes.label}
-          image={item['im:image'][0].label.replace(/\d{2}x\d{2}/g, '300x300')}
+          image={item['im:image'][2].label}
           link={item.id.label}
           price={item["im:price"].label}
           releasedate={item["im:releaseDate"].attributes.label}
