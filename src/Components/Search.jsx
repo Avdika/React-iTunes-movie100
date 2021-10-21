@@ -10,33 +10,34 @@ import { ActualData } from '../Context/index';
 function Search() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const {ActData, setActData} = useContext(ActualData);
-
-  const handleResult = result => {
-    setActData(result);
-    setMovies(result);
-    setIsLoading(false);
-    console.log('___result', result);
-  };
+  const { ActData, setActData } = useContext(ActualData);
 
   useEffect(() => {
     setActData([]);
     setIsLoading(true);
 
-    (async () =>{
+    (async () => {
       await axios
-      .get(`https://itunes.apple.com/us/rss/topmovies/limit=100/json`)
-      .then(result => handleResult(result.data.feed.entry))
-      .catch((error) => {
-        console.log('we have received an error: ', error);
-      });
+        .get(`https://itunes.apple.com/us/rss/topmovies/limit=100/json`)
+        .then(result => handleResult(result.data.feed.entry))
+        .catch((error) => {
+          console.log('we have received an error: ', error);
+        });
     })();
-  }, []);
+
+    const handleResult = result => {
+      setActData(result);
+      setMovies(result);
+      setIsLoading(false);
+      console.log('___result', result);
+    };
+
+  }, [setActData]);
 
   return (
     <Container>
-      <FilterForm></FilterForm>
-      {isLoading ? <Spinner /> :null }
+      <FilterForm />
+      {isLoading ? <Spinner /> : null}
       <Movies items={ActData || movies} />
     </Container>
   )
