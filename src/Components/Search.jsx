@@ -7,14 +7,18 @@ import Spinner from './Spinner';
 
 function Search() {
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleResult = result => {
     setMovies(result);
+    setIsLoading(false);
     console.log('___result', result);
   };
 
   useEffect(() => {
     setMovies([]);
+    setIsLoading(true);
+
     (async () =>{
       await axios
       .get(`https://itunes.apple.com/us/rss/topmovies/limit=100/json`)
@@ -27,7 +31,7 @@ function Search() {
 
   return (
     <Container>
-      <Spinner />
+      {isLoading ? <Spinner /> :null }
       <Movies items={movies} />
     </Container>
   )
