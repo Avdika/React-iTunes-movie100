@@ -1,22 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 import { Container } from '../Styled/SearchStyle';
 import Movies from './Movies';
 import Spinner from './Spinner';
+import FilterForm from './FilterForm';
+import { ActualData } from '../Context/index';
 
 function Search() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const {ActData, setActData} = useContext(ActualData);
 
   const handleResult = result => {
+    setActData(result);
     setMovies(result);
     setIsLoading(false);
     console.log('___result', result);
   };
 
   useEffect(() => {
-    setMovies([]);
+    setActData([]);
     setIsLoading(true);
 
     (async () =>{
@@ -31,8 +35,9 @@ function Search() {
 
   return (
     <Container>
+      <FilterForm></FilterForm>
       {isLoading ? <Spinner /> :null }
-      <Movies items={movies} />
+      <Movies items={ActData || movies} />
     </Container>
   )
 }
