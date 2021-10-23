@@ -6,9 +6,9 @@ import { Container } from '../Styled/RepositoriesStyle';
 function Movies(props) {
   return (
     <Container>
-      {props.items.map(item => (
+      {props.items?.map(item => (
         <Movie
-          key={item.id.attributes['im.id']}
+          key={Date.now() + props.items.indexOf(item)}
           artist={item["im:artist"].label}
           description={item.summary.label}
           genre={item.category.attributes.label}

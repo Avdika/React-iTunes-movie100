@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import NavBar from './Components/Navbar';
-import Search from './Components/Search';
+import MainPage from './Components/MainPage';
 import About from './Components/About';
 import { ActualData } from './Context/index';
 
 function App() {
-  const [ActData, setActData] = useState(null);
+  const [actData, setActData] = useState([]);
 
   return (
     <BrowserRouter>
       <NavBar />
-      <ActualData.Provider value={{ ActData, setActData }}>
+      <ActualData.Provider value={{ actData, setActData }}>
       <Switch>
-        <Route path="/" exact component={Search} />
+        <Route path="/" exact component={MainPage} />
         <Route path="/About" component={About} />
       </Switch>
       </ActualData.Provider>
