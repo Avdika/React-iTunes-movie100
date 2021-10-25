@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Movie from './Movie';
-import { Container } from '../Styled/RepositoriesStyle';
+import { Container } from '../Styles/RepositoriesStyle';
 
 function Movies(props) {
   return (

@@ -8,6 +8,7 @@ const useGetData = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+
     (async () => {
       setIsError(false);
       setIsLoading(true);

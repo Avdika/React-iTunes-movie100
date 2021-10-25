@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Nav, Ul, A } from '../Styled/NavbarStyle';
+import { Nav, Ul, A } from '../Styles/NavbarStyle';
 
 function Navbar({ icon, title, location }) {
   return (

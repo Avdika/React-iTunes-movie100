@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
-import { Container } from '../Styled/SearchStyle';
+import { Container } from '../Styles/SearchStyle';
 import Movies from './Movies';
 import Spinner from './Spinner';
 import FilterForm from './FilterForm';
@@ -10,15 +10,21 @@ import { ActualData } from '../Context/index';
 
 function Search() {
   const [{ data, isLoading, isError, Error }] = useGetData();
-  const { actData, setActData } = useContext(ActualData);
+  const { actData, updateData } = useContext(ActualData);
 
-  // setActData(data);
+  useEffect(() => {
+    if(!actData.length){
+    updateData(data);
+    }
+  }, [updateData, data, actData.length]);
 
   return (
     <Container>
       <FilterForm />
       {isLoading ? <Spinner /> : null}
-      {isError ? <ErrorBlock errorInfo={Error} /> : <Movies items={data} />}
+      {isError
+      ? <ErrorBlock errorInfo={Error} />
+      : <Movies items={actData} />}
     </Container>
   )
 }
