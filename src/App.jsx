@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './Components/Navbar';
 import MainPage from './Components/MainPage';
 import About from './Components/About';
-import ActualDataProvider from './Context/index';
+import ActualDataProvider from './Context/actualDataContext';
 
 function App() {
 

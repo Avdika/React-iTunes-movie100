@@ -26,7 +26,7 @@ const useGetData = () => {
         });
     })();
   }, [setData]);
-
+  console.log('__datahook', data)
   return [{ data, isLoading, isError, Error }];
 }
 
