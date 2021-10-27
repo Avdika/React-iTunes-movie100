@@ -22,6 +22,13 @@ function SearchForm(props) {
       updateFilter(value);
     }
   };
+   const clearFilter = (event) => {
+    event.preventDefault();
+    if (value.length){
+      setValue('');
+      updateFilter(value);
+    }
+   }
 
   return (
     <div>
@@ -35,6 +42,9 @@ function SearchForm(props) {
         />
         <Button onClick={event => submitValue(event)}>
           {props.buttonText}
+        </Button>
+        <Button onClick={event => clearFilter(event)}>
+          Clear filter
         </Button>
         {showAlert ? <div data-testid='inputAllert'>Please enter movie name</div> : null}
       </form>

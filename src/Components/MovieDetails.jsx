@@ -31,7 +31,7 @@ const MovieDetails = props => {
             type={details.link[0]?.attributes.type}
             href={details.link[0]?.attributes.href}
           >View more on apple.com</a>
-          <p>Rent {details["im:rentalPrice"].label} / Buy {details["im:price"]?.label}</p>
+          <p>Rent {details["im:rentalPrice"]?.label} / Buy {details["im:price"]?.label}</p>
           <p>rights: {details.rights?.label}</p>
         </div>
       </div>

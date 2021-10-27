@@ -1,0 +1,50 @@
+$PersianIndigo: rgb(41,24,139);
+$Mantis: rgb(124,200,86);
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 1;
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: $PersianIndigo;
+
+  @media (max-width: 700px) {
+      display: block;
+      text-align: center;
+  }
+
+  .title {
+    color: $Mantis;
+  }
+
+  .list {
+    list-style: none;
+    display: flex;
+    overflow: hidden;
+
+    @media (max-width: 700px) {
+        text-align: center;
+        justify-content: center;
+    }
+  }
+
+  .navlink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 2rem;
+    z-index: 1;
+    width: 100%;
+    padding: .45rem;
+    margin: 0 .25rem;
+    color: rgb(255, 255, 255);
+
+    .selected {
+      color: #791b3a;
+      cursor: default;
+    }
+  }
+}
