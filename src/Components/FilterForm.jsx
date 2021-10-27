@@ -26,7 +26,7 @@ function SearchForm(props) {
     event.preventDefault();
     if (value.length){
       setValue('');
-      updateFilter(value);
+      updateFilter('');
     }
    }
 
