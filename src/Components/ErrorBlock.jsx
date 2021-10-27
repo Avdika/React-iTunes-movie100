@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ErrorBlock() {
+function ErrorBlock({errorInfo}) {
   return (
     <div>
-
+      <p>{errorInfo}</p>
     </div>
   )
 }

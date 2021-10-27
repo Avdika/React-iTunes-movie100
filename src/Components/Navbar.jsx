@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Nav, Ul, A } from '../Styles/NavbarStyle';
 
@@ -17,14 +16,6 @@ function Navbar({ icon, title, location }) {
       </Ul>
     </Nav>
   )
-}
-
-Navbar.defaultProps = {
-  title: 'Top 100 movies',
-}
-
-Navbar.propTypes = {
-  title: PropTypes.string.isRequired
 }
 
 export default Navbar;
