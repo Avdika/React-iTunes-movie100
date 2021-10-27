@@ -23,8 +23,8 @@ function Search() {
     <Container>
       <SortingForm />
       <FilterForm
-        placeholder="Enter Movie Name"
-        buttonText="Filter"
+        placeholder='Enter Movie Name'
+        buttonText='Filter'
       />
       {isLoading ? <Spinner /> : null}
       {isError

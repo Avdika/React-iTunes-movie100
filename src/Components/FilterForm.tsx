@@ -27,23 +27,23 @@ function SearchForm(props: Props) {
       updateFilter(value);
     }
   };
-   const clearFilter = (event: React.FormEvent<HTMLInputElement>) => {
+  const clearFilter = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
-    if (value.length){
+    if (value.length) {
       setValue('');
       updateFilter('');
     }
-   }
+  }
 
   return (
     <div>
       <form>
         <Input
-          type="text"
+          type='text'
           placeholder={props.placeholder}
           value={value}
           onChange={changeValue}
-          autoComplete="off"
+          autoComplete='off'
         />
         <Button onClick={(event: React.FormEvent<HTMLInputElement>) => submitValue(event)}>
           {props.buttonText}
