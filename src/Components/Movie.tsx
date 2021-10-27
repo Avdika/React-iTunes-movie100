@@ -1,8 +1,15 @@
-import React from 'react';
-
 import { Container, RepositoryBody, Title, Description, Image } from '../Styles/RepositoryStyle';
 
-function Movie(props) {
+type Props = {
+  onClick: () => void,
+  image: string,
+  title: string,
+  genre: string,
+  artist: string,
+  releasedate: Date
+}
+
+function Movie(props: Props) {
   return (
     <Container onClick={props.onClick}>
       <Image src={props.image} />

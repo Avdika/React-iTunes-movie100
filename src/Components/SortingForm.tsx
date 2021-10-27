@@ -6,8 +6,8 @@ import { Button } from '../Styles/SearchFormStyle';
 const SortingForm = () => {
   const { actData, updateData } = useContext(ActualData);
 
-  const SortData = (e) => {
-    const filterCriteria = e.target.title;
+  const SortData = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const filterCriteria = event.target.title;
     const res = [...actData];
 
     if(filterCriteria === 'name'){
@@ -30,10 +30,10 @@ const SortingForm = () => {
   return (
     <div>
       <p>Sort Movies</p>
-      <Button title='name' onClick={event => SortData(event) }>Name</Button>
-      <Button title='artist' onClick={event => SortData(event) }>Artist</Button>
-      <Button title='genre' onClick={event => SortData(event) }>Genre</Button>
-      <Button title='clear' onClick={event => SortData(event) }>Clear sorting</Button>
+      <Button title='name' onClick={(event: React.ChangeEvent<HTMLInputElement>) => SortData(event) }>Name</Button>
+      <Button title='artist' onClick={(event: React.ChangeEvent<HTMLInputElement>) => SortData(event) }>Artist</Button>
+      <Button title='genre' onClick={(event: React.ChangeEvent<HTMLInputElement>) => SortData(event) }>Genre</Button>
+      <Button title='clear' onClick={(event: React.ChangeEvent<HTMLInputElement>) => SortData(event) }>Clear sorting</Button>
     </div>
   )
 }
