@@ -7,7 +7,7 @@ import ErrorBlock from './ErrorBlock';
 import FilterForm from './FilterForm';
 import { ActualData } from '../Context/actualDataContext';
 import useGetData from '../Hooks/useGetData';
-import { Container } from '../Styles/SearchStyle';
+import '../Styles/css/mainPage.css';
 
 function Search() {
   const [{ data, isLoading, isError, Error }] = useGetData();
@@ -20,17 +20,19 @@ function Search() {
   }, [updateData, data, actData.length]);
 
   return (
-    <Container>
+    <div className='mainPage'>
+      <div className='movieManipulate'>
       <SortingForm />
       <FilterForm
         placeholder='Enter Movie Name'
         buttonText='Filter'
       />
+      </div>
       {isLoading ? <Spinner /> : null}
       {isError
         ? <ErrorBlock errorInfo={Error} />
         : <Movies items={actData} />}
-    </Container>
+    </div>
   )
 }
 

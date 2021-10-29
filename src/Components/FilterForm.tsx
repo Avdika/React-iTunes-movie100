@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 
 import { ActualData } from '../Context/actualDataContext';
-import { Input, Button } from '../Styles/SearchFormStyle';
+import '../Styles/css/movieManipulate.css';
 
 type Props = {
   placeholder: string,
@@ -36,21 +36,22 @@ function SearchForm(props: Props) {
   }
 
   return (
-    <div>
+    <div className='filtering'>
+      <p>Filter Movies by Name</p>
       <form>
-        <Input
+        <input
           type='text'
           placeholder={props.placeholder}
           value={value}
           onChange={changeValue}
           autoComplete='off'
         />
-        <Button onClick={(event: React.FormEvent<HTMLInputElement>) => submitValue(event)}>
+        <button className='filterButton' onClick={(event: React.FormEvent<HTMLInputElement>) => submitValue(event)}>
           {props.buttonText}
-        </Button>
-        <Button onClick={(event: React.FormEvent<HTMLInputElement>) => clearFilter(event)}>
+        </button>
+        <button onClick={(event: React.FormEvent<HTMLInputElement>) => clearFilter(event)}>
           Clear filter
-        </Button>
+        </button>
         {showAlert ? <div data-testid='inputAllert'>Please enter movie name</div> : null}
       </form>
     </div>

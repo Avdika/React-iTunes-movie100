@@ -5,6 +5,7 @@ import NavBar from './Components/Navbar';
 import MainPage from './Components/MainPage';
 import About from './Components/About';
 import ActualDataProvider from './Context/actualDataContext';
+import './Styles/css/App.css';
 
 function App() {
 

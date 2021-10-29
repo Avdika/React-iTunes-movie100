@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react';
 import Movie from './Movie';
 import MovieDetails from './MovieDetails';
 import { ActualData, Datatype } from '../Context/actualDataContext';
-import { Container } from '../Styles/RepositoriesStyle';
+import '../Styles/css/movies.css';
 
 type Props = {
   items: Datatype[]
@@ -25,7 +25,7 @@ function Movies(props: Props) {
   }
 
   return (
-    <Container>
+    <div className='moviesBlock'>
       {items?.map(item => (
         <Movie
           key={Date.now() + items.indexOf(item)}
@@ -42,7 +42,7 @@ function Movies(props: Props) {
           handleClose={showDetails}
           details={details}
         />}
-    </Container>
+    </div>
   )
 }
 

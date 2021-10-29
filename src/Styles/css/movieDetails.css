@@ -5,6 +5,8 @@
   height: 100vh;
   top: 0;
   left: 0;
+  -webkit-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
 }
 
 .details-box .box {
@@ -16,9 +18,27 @@
   margin-top: calc(100vh - 85vh - 20px);
   background: #fff;
   border-radius: 4px;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #999;
   overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.details-box .box .imageDetails {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.details-box .box .characteristicBox p {
+  text-align: left;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.details-box .box .characteristicBox p span {
+  font-weight: bold;
 }
 
 .details-box .box .close-icon {

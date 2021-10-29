@@ -1,49 +1,45 @@
-$PersianIndigo: rgb(41,24,139);
-$Mantis: rgb(124,200,86);
+@import "./Variables/variables.scss";
 
 .navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 2rem;
   z-index: 1;
   width: 100%;
-  margin-bottom: 1rem;
+  height: 60px;
   background-color: $PersianIndigo;
 
   @media (max-width: 700px) {
-      display: block;
-      text-align: center;
+    display: block;
+    text-align: center;
   }
 
   .title {
     color: $Mantis;
+    margin-left: 20px;
   }
 
   .list {
     list-style: none;
     display: flex;
-    overflow: hidden;
+    justify-content: flex-end;
+    margin-right: 20px;
+    font-family: $mainText;
 
     @media (max-width: 700px) {
-        text-align: center;
-        justify-content: center;
+      text-align: center;
+      justify-content: center;
     }
-  }
 
-  .navlink {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.7rem 2rem;
-    z-index: 1;
-    width: 100%;
-    padding: .45rem;
-    margin: 0 .25rem;
-    color: rgb(255, 255, 255);
-
-    .selected {
-      color: #791b3a;
+    .navlink {
+      color: rgb(255, 255, 255);
+      margin: 10px;
+      font-size: 18px;
+      text-decoration: none;
+      color: $Mantis;
+    }
+    a.selected {
+      color: $ActiveLinks;
       cursor: default;
     }
   }

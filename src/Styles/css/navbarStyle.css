@@ -8,10 +8,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.7rem 2rem;
   z-index: 1;
   width: 100%;
-  margin-bottom: 1rem;
+  height: 60px;
   background-color: #29188b;
 }
 
@@ -24,6 +23,7 @@
 
 .navBar .title {
   color: #7cc856;
+  margin-left: 20px;
 }
 
 .navBar .list {
@@ -31,7 +31,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 @media (max-width: 700px) {
@@ -43,25 +47,15 @@
   }
 }
 
-.navBar .navlink {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0.7rem 2rem;
-  z-index: 1;
-  width: 100%;
-  padding: .45rem;
-  margin: 0 .25rem;
+.navBar .list .navlink {
   color: white;
+  margin: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #7cc856;
 }
 
-.navBar .navlink .selected {
-  color: #791b3a;
+.navBar .list a.selected {
+  color: #811a3c;
   cursor: default;
 }

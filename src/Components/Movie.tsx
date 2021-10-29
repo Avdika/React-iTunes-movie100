@@ -1,4 +1,4 @@
-import { Container, RepositoryBody, Title, Description, Image } from '../Styles/RepositoryStyle';
+import '../Styles/css/movie.css';
 
 type Props = {
   onClick: () => void,
@@ -11,15 +11,15 @@ type Props = {
 
 function Movie(props: Props) {
   return (
-    <Container onClick={props.onClick}>
-      <Image src={props.image} />
-      <RepositoryBody>
-        <Title>{props.title}</Title>
-        <Description>{props.genre}</Description>
-        <Title>Artist</Title><Description>{props.artist}</Description>
-        <Title>Releasedate</Title><Description>{props.releasedate}</Description>
-      </RepositoryBody>
-    </Container>
+    <div className='movieCard' onClick={props.onClick}>
+      <img className='movieImg' src={props.image} alt='movieImage'/>
+      <div className='movieMainDetails'>
+        <p><span>{props.title}</span></p>
+        <p>{props.genre}</p>
+        <p><span>Artist: </span>{props.artist}</p>
+        <p><span>Releasedate: </span>{props.releasedate}</p>
+      </div>
+    </div>
   )
 }
 

@@ -9,10 +9,10 @@ function Navbar() {
       <h2 className='title'>Top 100 Movies</h2>
       <ul className='list'>
         <li>
-          <NavLink to="/" className='navlink selected'>Home</NavLink>
+          <NavLink exact to="/" className='navlink' activeClassName='selected'>Home</NavLink>
         </li>
         <li>
-          <NavLink to="/About" className='navlink'>About</NavLink>
+          <NavLink to="/About" className='navlink' activeClassName='selected'>About</NavLink>
         </li>
       </ul>
     </nav>
