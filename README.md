@@ -11,11 +11,13 @@ This is a simple application for show top 100 movies using iTunes API
 
 ### Usage
 
-
+Find best movies
 
 ## Roadmap
 
-
+- fix bugs
+- add more animations
+- add more functionality
 
 # Getting Started with Create React App
 

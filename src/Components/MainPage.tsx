@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
 import Movies from './Movies';
 import Spinner from './Spinner';
